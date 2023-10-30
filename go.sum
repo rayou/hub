@@ -136,8 +136,8 @@ github.com/anchore/go-struct-converter v0.0.0-20221118182256-c68fdcfa2092 h1:aM1
 github.com/anchore/go-struct-converter v0.0.0-20221118182256-c68fdcfa2092/go.mod h1:rYqSE9HbjzpHTI74vwPvae4ZVYZd1lue2ta6xHPdblA=
 github.com/anmitsu/go-shlex v0.0.0-20200514113438-38f4b401e2be h1:9AeTilPcZAjCFIImctFaOjnTIavg87rW78vTPkQqLI8=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
-github.com/aquasecurity/trivy v0.46.0 h1:ryVH2WeLIDNXIMYIMtAzX+VD6/BWcLIkey48LLDD7PU=
-github.com/aquasecurity/trivy v0.46.0/go.mod h1:BBaRaoRvF2KrGzXo9UwMeNwNIxQgxfNw7nlpi1X2lnI=
+github.com/aquasecurity/trivy v0.46.1 h1:YYqPwWTWXSYXgvExbopENlUP3Eztd+gTznnD+ZbHWvc=
+github.com/aquasecurity/trivy v0.46.1/go.mod h1:jOm8rwmwcZ2w9myAiOvS30MjKmJvpHTWRvUzPSXAvyw=
 github.com/aquasecurity/trivy-db v0.0.0-20231005141211-4fc651f7ac8d h1:fjI9mkoTUAkbGqpzt9nJsO24RAdfG+ZSiLFj0G2jO8c=
 github.com/aquasecurity/trivy-db v0.0.0-20231005141211-4fc651f7ac8d/go.mod h1:cj9/QmD9N3OZnKQMp+/DvdV+ym3HyIkd4e+F0ZM3ZGs=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0 h1:jfIu9sQUG6Ig+0+Ap1h4unLjW6YQJpKZVmUzxsD4E/Q=
