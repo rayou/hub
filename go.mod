@@ -17,7 +17,7 @@ require (
 	github.com/google/go-containerregistry v0.16.1
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/gorilla/csrf v1.7.1
-	github.com/gorilla/feeds v1.1.1
+	github.com/gorilla/feeds v1.1.2
 	github.com/gorilla/securecookie v1.1.1
 	github.com/h2non/go-is-svg v0.0.0-20160927212452-35e8c4b0612c
 	github.com/hashicorp/go-multierror v1.1.1
