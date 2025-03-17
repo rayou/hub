@@ -8,7 +8,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-shadow": "^20.6.0",
-    "styled-components": "^6.1.15",
+    "styled-components": "^6.1.16",
     "stylis": "^4.3.6"
   },
   "devDependencies": {
@@ -24,7 +24,7 @@
     "@types/jest": "^29.5.14",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.10",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.11",
     "@types/react-dom": "^19.0.4",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^9.22.0",
