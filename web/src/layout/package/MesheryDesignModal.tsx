@@ -1,11 +1,10 @@
 import isUndefined from 'lodash/isUndefined';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { FiCode } from 'react-icons/fi';
 import { useLocation, useNavigate } from 'react-router-dom';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 import BlockCodeButtons from '../common/BlockCodeButtons';
+import CodeViewer from '../common/CodeViewer';
 import Modal from '../common/Modal';
 import styles from './MesheryDesignModal.module.css';
 
@@ -14,6 +13,19 @@ interface Props {
   visibleDesign: boolean;
   design?: string;
 }
+
+const getFormattedDesignContent = (design: string): string => {
+  const trimmedDesign = design.trim();
+  if (trimmedDesign.includes('\n') || (!trimmedDesign.startsWith('{') && !trimmedDesign.startsWith('['))) {
+    return design;
+  }
+
+  try {
+    return JSON.stringify(JSON.parse(trimmedDesign), null, 2);
+  } catch {
+    return design;
+  }
+};
 
 const MesheryDesignModal = (props: Props) => {
   const navigate = useNavigate();
@@ -44,6 +56,12 @@ const MesheryDesignModal = (props: Props) => {
     }
   }, []);
 
+  const design = isUndefined(props.design) ? '' : props.design;
+  const formattedDesign = useMemo(
+    () => (openStatus ? getFormattedDesignContent(design) : design),
+    [design, openStatus]
+  );
+
   if (isUndefined(props.design)) return null;
 
   return (
@@ -68,16 +86,17 @@ const MesheryDesignModal = (props: Props) => {
           open={openStatus}
           footerClassName={styles.modalFooter}
         >
-          <div className="h-100 mw-100">
-            <div className={`position-relative h-100 mh-100 border border-1 ${styles.syntaxWrapper}`}>
-              <BlockCodeButtons filename={`${props.normalizedName}.yaml`} content={props.design} />
+          <div className={`h-100 mw-100 d-flex flex-column ${styles.contentWrapper}`}>
+            <div className={`position-relative flex-grow-1 mh-100 border border-1 ${styles.syntaxWrapper}`}>
+              <BlockCodeButtons filename={`${props.normalizedName}.yaml`} content={design} />
 
-              <SyntaxHighlighter
+              <CodeViewer
+                content={formattedDesign}
                 language="yaml"
-                style={docco}
                 customStyle={{
                   backgroundColor: 'transparent',
                   padding: '1.5rem',
+                  paddingRight: '5rem',
                   lineHeight: '1.25rem',
                   marginBottom: '0',
                   height: '100%',
@@ -89,10 +108,10 @@ const MesheryDesignModal = (props: Props) => {
                   marginRight: '5px',
                   fontSize: '0.8rem',
                 }}
+                plainCodeTestId="plain-design"
+                plainCodeLinesTestId="plain-design-lines"
                 showLineNumbers
-              >
-                {props.design}
-              </SyntaxHighlighter>
+              />
             </div>
           </div>
         </Modal>

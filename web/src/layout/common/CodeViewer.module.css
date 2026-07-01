@@ -1,0 +1,37 @@
+.plainCodeContainer {
+  height: 100%;
+  min-height: 0;
+}
+
+.plainCodeWrapper {
+  min-height: 0;
+  tab-size: 2;
+}
+
+.syntaxWarning {
+  border-top: 1px solid var(--bs-alert-border-color) !important;
+  white-space: normal;
+}
+
+.plainCodeContent {
+  min-width: max-content;
+}
+
+.plainCode,
+.plainCodeLines {
+  font-size: inherit;
+  line-height: inherit;
+  overflow: visible !important;
+  white-space: pre !important;
+}
+
+.plainCodeLines {
+  flex: 0 0 auto;
+  color: var(--color-black-25);
+}
+
+.plainCode {
+  flex: 1 0 auto;
+  min-width: 0;
+  color: inherit;
+}
